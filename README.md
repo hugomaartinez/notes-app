@@ -1,48 +1,60 @@
-# Astro Starter Kit: Basics
+# Notes App
 
-```sh
-npm create astro@latest -- --template basics
+Esta es una aplicación de notas donde puedes crear, modificar, eliminar y ver notas. La aplicación está construida usando Astro, TailwindCSS y Turso como base de datos.
+
+## Características
+
+- **Crear notas**: Añade nuevas notas fácilmente.
+- **Modificar notas**: Edita el contenido de tus notas existentes.
+- **Eliminar notas**: Borra las notas que ya no necesites.
+- **Ver notas**: Visualiza todas tus notas en un solo lugar.
+
+## Tecnologías
+
+- **Astro**: Un moderno framework para construir sitios web rápidos.
+- **TailwindCSS**: Un framework de CSS para un diseño rápido y eficiente.
+- **Turso**: Una base de datos rápida y escalable.
+
+## Instalación
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/hugomaartinez/notes-app.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Navega al directorio del proyecto:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+cd notes-app
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Instala las dependencias:
 
-## 🧞 Commands
+```bash
+npm install
+```
 
-All commands are run from the root of the project, from a terminal:
+## Uso
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+1. Inicia la aplicación:
 
-## 👀 Want to learn more?
+```bash
+npm start
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+2. Abre tu navegador y navega a `http://localhost:4321` para ver la aplicación en acción.
+
+## Contribuir
+
+Si deseas contribuir a este proyecto, por favor sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz commit (`git commit -am 'Añadir nueva característica'`).
+4. Sube tus cambios (`git push origin feature/nueva-caracteristica`).
+5. Abre un Pull Request.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
