@@ -1,11 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Note from "../components/Note.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import NoteForm from "../components/NoteForm.astro";
 ---
 
 <Layout>
-  <Note />
+  <section class="mt-4">
+    <NoteForm />
+  </section>
+  <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <Note />
+    <Note />
+    <Note />
+    <Note />
+    <Note />
+    <Note />
+    <Note />
+    <Note />
+    <Note />
+  </section>
 </Layout>
