@@ -11,9 +11,13 @@ import Footer from "../components/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Notes App</title>
   </head>
-  <body class="bg-gradient-to-r from-blue-900 via-teal-600 to-cyan-400">
+  <body
+    class="bg-gradient-to-r from-blue-900 via-teal-600 to-cyan-400 flex flex-col min-h-screen"
+  >
     <Header />
-    <slot class="" />
+    <main class="flex-grow">
+      <slot class="" />
+    </main>
     <Footer />
   </body>
 </html>
