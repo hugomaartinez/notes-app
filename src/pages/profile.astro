@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { checkSessionLogin } from "../utils/checkSession";
 
-await checkSessionLogin();
+await checkSessionLogin(Astro);
 ---
 
 <Layout title="Profile" />

@@ -1,7 +1,6 @@
-import { Astro } from "astro";
 import { getSession } from "auth-astro/server";
 
-export async function checkSession() {
+export async function checkSession(Astro) {
   const session = await getSession(Astro.request);
 
   if (!session) {
@@ -9,7 +8,7 @@ export async function checkSession() {
   }
 }
 
-export async function checkSessionLogin() {
+export async function checkSessionLogin(Astro) {
   const session = await getSession(Astro.request);
 
   if (session) {
