@@ -1,0 +1,25 @@
+---
+//const { note } = Astro.props;
+
+const note = {
+  title: "Sample Note",
+  content: "This is an example of a note content.",
+};
+---
+
+<div class="border border-gray-300 p-4 my-4 rounded-lg bg-gray-100">
+  <div class="flex justify-between items-center">
+    <h2 class="text-xl m-0">{note.title}</h2>
+    <div class="flex gap-2">
+      <button class="px-4 py-2 bg-green-500 text-white rounded">Edit</button>
+      <button class="px-4 py-2 bg-red-500 text-white rounded">Delete</button>
+    </div>
+  </div>
+  <div class="my-4">
+    <p>{note.content}</p>
+  </div>
+  <div class="flex gap-2">
+    <button class="px-4 py-2 bg-blue-500 text-white rounded">Save</button>
+    <button class="px-4 py-2 bg-gray-500 text-white rounded">Cancel</button>
+  </div>
+</div>
