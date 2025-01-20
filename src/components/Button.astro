@@ -1,0 +1,10 @@
+---
+const { color, text } = Astro.props as {
+  color: string;
+  text: string;
+};
+---
+
+<button class={`px-4 py-2 ${color} text-${text} rounded-lg`}>
+  <slot />
+</button>
