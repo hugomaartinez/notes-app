@@ -1,4 +1,9 @@
 ---
+import { SignOut } from "auth-astro/components";
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+
 const navItems = [
   { href: "/", text: "Inicio" },
   { href: "/notes", text: "Notas" },
@@ -25,5 +30,15 @@ const navItems = [
         }
       </ul>
     </nav>
+    <div>
+      {
+        session ? (
+          <SignOut />
+          <p>Bienvenido/a, {session?.user?.name ?? "Invitado/a"}</p>
+        ) : (
+          <a href="/login" class="text-blue-500">Iniciar sesión</a>
+        )
+      }
+    </div>
   </div>
 </header>
