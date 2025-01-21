@@ -30,11 +30,11 @@ const navItems = [
         }
       </ul>
     </nav>
-    <div>
+    <div class="flex items-center space-x-4">
       {
         session ? (
-          <SignOut />
           <p>Bienvenido/a, {session?.user?.name ?? "Invitado/a"}</p>
+          <SignOut class="bg-red-500 px-4 py-2 text-white rounded-lg">Cerrar sesión</SignOut>
         ) : (
           <a href="/login" class="text-blue-500">Iniciar sesión</a>
         )
