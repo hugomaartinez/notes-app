@@ -1,9 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import NoteForm from "../components/NoteForm.astro";
-import { checkSession } from "../utils/checkSession";
+import { getSession } from "auth-astro/server";
 
-await checkSession(Astro);
+const session = await getSession(Astro.request);
+
+if (!session) {
+  return Astro.redirect("/login");
+}
 ---
 
 <Layout>

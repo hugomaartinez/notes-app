@@ -1,9 +1,14 @@
 ---
 import LoginForm from "../components/LoginForm.astro";
 import Layout from "../layouts/Layout.astro";
-import { checkSessionLogin } from "../utils/checkSession";
 
-await checkSessionLogin(Astro);
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+
+if (session) {
+  return Astro.redirect("/");
+}
 ---
 
 <Layout title="Login">
