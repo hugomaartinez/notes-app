@@ -80,3 +80,10 @@ function togglePasswordVisibility() {
     </div>
   </div>
 </form>
+
+<script>
+  document.querySelector("form")?.addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("De momento solo se puede iniciar sesión Google o Github.");
+  });
+</script>
