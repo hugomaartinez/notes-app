@@ -1,6 +1,12 @@
 ---
+interface Props {
+  title: string;
+}
+
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const { title } = Astro.props;
 ---
 
 <html lang="es">
@@ -8,9 +14,9 @@ import Footer from "../components/Footer.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.webp" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Notes App</title>
+    <title>{title} - Notes App by hugomaartinez</title>
   </head>
+
   <body
     class="bg-gradient-to-r from-blue-900 via-teal-600 to-cyan-400 flex flex-col min-h-screen"
   >
