@@ -57,6 +57,7 @@ function togglePasswordVisibility() {
   </div>
   <button
     type="submit"
+    id="submit"
     class="w-full py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-700"
     >Iniciar Sesión</button
   >
@@ -81,8 +82,8 @@ function togglePasswordVisibility() {
   </div>
 </form>
 
-<script>
-  document.querySelector("form")?.addEventListener("submit", function (event) {
+<script is:inline>
+  document.querySelector("button")?.addEventListener("click", function (event) {
     event.preventDefault();
     alert("De momento solo se puede iniciar sesión Google o Github.");
   });
