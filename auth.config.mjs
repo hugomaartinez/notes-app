@@ -1,4 +1,4 @@
-//import GitHub from '@auth/core/providers/github';
+import GitHub from '@auth/core/providers/github';
 import Google from '@auth/core/providers/google';
 import { defineConfig } from 'auth-astro';
 
