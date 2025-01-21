@@ -1,0 +1,20 @@
+---
+import { getSession } from "auth-astro/server";
+
+const session = await getSession(Astro.request);
+const user = session?.user;
+
+console.log(user);
+---
+
+<div class="max-w-sm rounded-lg overflow-hidden shadow-lg p-4 bg-white">
+  <img
+    class="w-24 h-24 rounded-full mx-auto"
+    src={user?.image}
+    alt=`Imagen de perfil de ${user?.name}`
+  />
+  <div class="text-center mt-4">
+    <h2 class="text-xl font-bold">{user?.name}</h2>
+    <p class="text-gray-600">{user?.email}</p>
+  </div>
+</div>
