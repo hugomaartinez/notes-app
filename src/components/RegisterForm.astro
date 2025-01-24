@@ -1,67 +1,14 @@
 ---
-import EyeIcon from "./Icons/EyeIcon.astro";
-import EyeOffIcon from "./Icons/EyeOffIcon.astro";
-
-let showPassword = false;
-function togglePasswordVisibility() {
-  showPassword = !showPassword;
-}
+import NameInput from "./form/NameInput.astro";
+import EmailInput from "./form/EmailInput.astro";
+import PasswordInput from "./form/PasswordInput.astro";
 ---
 
 <form class="note-form max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
   <h2 class="text-center text-2xl font-bold mb-4">Regístrate</h2>
-  <div class="form-group mb-4">
-    <label for="name" class="block text-gray-700 font-bold mb-2">Nombre</label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      required
-      class="w-full px-3 py-2 border border-gray-300 rounded-lg"
-    />
-  </div>
-  <div class="form-group mb-4">
-    <label for="email" class="block text-gray-700 font-bold mb-2"
-      >Correo Electrónico</label
-    >
-    <input
-      type="email"
-      id="email"
-      name="email"
-      autocomplete="email"
-      required
-      class="w-full px-3 py-2 border border-gray-300 rounded-lg"
-    />
-  </div>
-  <div class="form-group mb-4 relative">
-    <label for="password" class="block text-gray-700 font-bold mb-2"
-      >Contraseña</label
-    >
-    <input
-      :type="showPassword ? 'text' : 'password'"
-      id="password"
-      name="password"
-      required
-      class="w-full px-3 py-2 border border-gray-300 rounded-lg pr-10"
-    />
-    {
-      /*
-    <button
-      type="button"
-      class="absolute inset-y-0 right-0 px-3 py-2"
-      onclick={togglePasswordVisibility}
-    >
-      {
-        showPassword ? (
-          <EyeOffIcon class="w-6 h-6 text-gray-700" />
-        ) : (
-          <EyeIcon class="w-6 h-6 text-gray-700" />
-        )
-      }
-    </button>
-    */
-    }
-  </div>
+  <NameInput />
+  <EmailInput />
+  <PasswordInput />
   <button
     type="submit"
     id="submit"
