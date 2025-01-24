@@ -4,12 +4,6 @@ import GitHub from "./Icons/GitHub.astro";
 import Google from "./Icons/Google.astro";
 import EyeIcon from "./Icons/EyeIcon.astro";
 import EyeOffIcon from "./Icons/EyeOffIcon.astro";
-
-// TODO - Implement togglePasswordVisibility function
-let showPassword = false;
-function togglePasswordVisibility() {
-  showPassword = !showPassword;
-}
 ---
 
 <form class="note-form max-w-md mx-auto p-4 bg-white shadow-md rounded-lg">
@@ -23,6 +17,7 @@ function togglePasswordVisibility() {
       id="email"
       name="email"
       autocomplete="email"
+      placeholder="example@mail.com"
       required
       class="w-full px-3 py-2 border border-gray-300 rounded-lg"
     />
@@ -32,28 +27,17 @@ function togglePasswordVisibility() {
       >Contraseña</label
     >
     <input
-      :type="showPassword ? 'text' : 'password'"
       id="password"
       name="password"
+      type="password"
       required
       class="w-full px-3 py-2 border border-gray-300 rounded-lg pr-10"
+      placeholder="********"
     />
-    {
-      /* 
-    <button
-      type="button"
-      class="absolute inset-y-0 right-0 px-3 py-2"
-      onclick={togglePasswordVisibility}
-    >
-      {
-        showPassword ? (
-          <EyeOffIcon class="w-6 h-6 text-gray-700" />
-        ) : (
-          <EyeIcon class="w-6 h-6 text-gray-700" />
-        )
-      }
-    </button>*/
-    }
+    <button type="button" class="absolute top-0 right-0 mt-10 mr-4">
+      <EyeOffIcon className="w-6 h-6 text-gray-700 hidden" />
+      <EyeIcon className="w-6 h-6 text-gray-700" />
+    </button>
   </div>
   <button
     type="submit"
@@ -83,8 +67,26 @@ function togglePasswordVisibility() {
 </form>
 
 <script is:inline>
-  document.querySelector("button")?.addEventListener("click", function (event) {
-    event.preventDefault();
-    alert("De momento solo se puede iniciar sesión Google o Github.");
+  document
+    .getElementById("submit")
+    ?.addEventListener("click", function (event) {
+      event.preventDefault();
+      alert("De momento solo se puede iniciar sesión Google o Github.");
+    });
+
+  document.querySelector("button").addEventListener("click", function () {
+    const password = document.getElementById("password");
+    const eyeIcon = document.querySelector("svg:first-child");
+    const eyeOffIcon = document.querySelector("svg:last-child");
+
+    if (password.type === "password") {
+      password.type = "text";
+      eyeIcon.classList.remove("hidden");
+      eyeOffIcon.classList.add("hidden");
+    } else {
+      password.type = "password";
+      eyeIcon.classList.add("hidden");
+      eyeOffIcon.classList.remove("hidden");
+    }
   });
 </script>
